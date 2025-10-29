@@ -12,6 +12,7 @@ const loginUser = async (req, res) => {
     const user = await Signup.findOne({ email });
     if (!user) {
       return res.status(200).json({ message: "User not found" });
+      return res.status(404).json({ message: "User not found" });
     }
     if (password !== user.password) {
       return res.status(401).json({ message: "Invalid credentials" });
