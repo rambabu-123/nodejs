@@ -2,7 +2,7 @@ const Employee = require('../models/Employee');
 
 const createEmployee = async (req,res) =>{
     try{
-  const {id,name,email,pphoneNumber,city} = req.body; 
+  const {id,name,email,phoneNumber,city} = req.body; 
    const employee = new Employee({
     id,
     name,

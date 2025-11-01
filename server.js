@@ -7,6 +7,7 @@ const cors = require('cors');
 const employeeRoutes = require('./routes/employeeRoutes');
 const signupRoutes = require('./routes/signupRoutes');
 const loginRoutes = require('./routes/loginRoutes');
+const serviceRoutes = require('./routes/serviceRoutes');
 
 
 dotenv.config();
@@ -29,6 +30,7 @@ mongoose
 app.use('/employees', employeeRoutes);
 app.use('/signups', signupRoutes);
 app.use('/api', loginRoutes);
+app.use('/services',serviceRoutes)
 
 // Start server
 const PORT = process.env.PORT || 5000;
