@@ -4,10 +4,9 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-const employeeRoutes = require('./routes/employeeRoutes');
 const signupRoutes = require('./routes/signupRoutes');
 const loginRoutes = require('./routes/loginRoutes');
-const serviceRoutes = require('./routes/serviceRoutes');
+const policyRoutes = require('./routes/policyRoutes');
 
 
 dotenv.config();
@@ -26,11 +25,9 @@ mongoose
   .then(() => console.log(' Connected to MongoDB successfully'))
   .catch((err) => console.error('MongoDB connection failed:', err));
 
-
-app.use('/employees', employeeRoutes);
 app.use('/signups', signupRoutes);
 app.use('/api', loginRoutes);
-app.use('/services',serviceRoutes)
+app.use('/policies', policyRoutes);
 
 // Start server
 const PORT = process.env.PORT || 5000;
